@@ -7,7 +7,7 @@
 #include <functional>
 #include <memory>
 
-extern "C" 
+extern "C"
 {
 #include <libavformat/avformat.h>
 #include <libavcodec/avcodec.h>
@@ -19,6 +19,7 @@ class AudioDecoderAAC
 {
 private:
     using AACAudioDecoderCallbackType = std::function<void(uint8_t*, uint32_t)>;
+
 public:
     AudioDecoderAAC();
     ~AudioDecoderAAC();
@@ -39,4 +40,4 @@ private:
     AACAudioDecoderCallbackType callback_;
 };
 
-#endif  // __AUDIO_DECODER_AAC_H__
+#endif // __AUDIO_DECODER_AAC_H__

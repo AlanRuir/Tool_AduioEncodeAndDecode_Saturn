@@ -7,7 +7,7 @@
 #include <functional>
 #include <memory>
 
-extern "C" 
+extern "C"
 {
 #include <libavformat/avformat.h>
 #include <libavcodec/avcodec.h>
@@ -27,20 +27,20 @@ public:
     bool InstallCallback(AACAudioEncoderCallbackType callback);
 
 private:
-    void UpdateAdtsHeader(AVCodecContext *codec_context, int aac_length);
+    void UpdateAdtsHeader(AVCodecContext* codec_context, int aac_length);
 
 private:
-    int                      bytes_per_sample_;
-    int                      sample_rate_;
-    int                      channels_;
-    size_t                   counter_;
-    AVCodec*                 codec_;
-    AVCodecContext*          codec_context_;
-    AVFrame*                 frame_;
-    AVPacket*                pkt_;
-    SwrContext*              swr_ctx_;
-    std::shared_ptr<uint8_t> adts_header_;
+    int                         bytes_per_sample_;
+    int                         sample_rate_;
+    int                         channels_;
+    size_t                      counter_;
+    AVCodec*                    codec_;
+    AVCodecContext*             codec_context_;
+    AVFrame*                    frame_;
+    AVPacket*                   pkt_;
+    SwrContext*                 swr_ctx_;
+    std::shared_ptr<uint8_t>    adts_header_;
     AACAudioEncoderCallbackType callback_;
 };
 
-#endif  // __AUDIO_ENCODER_AAC_H__
+#endif // __AUDIO_ENCODER_AAC_H__
